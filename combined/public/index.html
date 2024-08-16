@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kur Marius?</title>
+    <link rel="icon" type="image/x-icon" href="/huh.ico">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 70vh;
+        }
+        .progress-container {
+            max-width: 500px;
+            width: 100vw;
+        }
+        #progressBar {
+            text-align: center;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="js/map.js"></script>
+    <div>
+        <p>
+            <b>Goal:</b> From Kaunas to Deventer by bike. <span style="color: green;">Completed 1627km/1500km (108%) ✓</span>
+            <br>
+            <small>The trip of life by Marius Pažėra</small>
+        </p>
+        <hr>
+
+        <br>
+        <table id="daily_table">
+            <thead>
+                <tr>
+                    <th>Date:</th>
+                    <th>Range driven:</th>
+                    <th>Average speed:</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+<script>
+    fetch('/coords/table')
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.querySelector('#daily_table tbody');
+            data.forEach(row => {
+                const tr = document.createElement('tr');
+                
+                const tdDate = document.createElement('td');
+                tdDate.textContent = row.date;
+                tr.appendChild(tdDate);
+                
+                const tdRange = document.createElement('td');
+                tdRange.textContent = row.range + " km";
+                tr.appendChild(tdRange);
+
+                const tdSpeed = document.createElement('td');
+                tdSpeed.textContent = row.speed + " km/h";
+                tr.appendChild(tdSpeed);
+                
+                tableBody.appendChild(tr);
+            });
+        }).catch(error => {
+            console.log('Fetch error:' + error);});
+</script>
