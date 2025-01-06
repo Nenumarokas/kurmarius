@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kur Marius?</title>
+    <link rel="icon" type="image/x-icon" href="/sexi.ico">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 70vh;
+        }
+        .progress-container {
+            max-width: 500px;
+            width: 100vw;
+        }
+        #progressBar {
+            text-align: center;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="js/map.js"></script>
+    <div>
+        <p>
+            <b>Goal:</b> From Kaunas to Deventer by bike. <span style="color: green;">Completed 1627km/1500km (108%) ✓</span>
+            <br>
+            <small>The trip of life by Marius Pažėra</small>
+        </p>
+        <hr>
+
+        <br>
+        <table id="daily_table">
+            <thead>
+                <tr>
+                    <th>Date:</th>
+                    <th>Range driven:</th>
+                    <th>Average speed:</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>2024-06-30</td><td>87 km</td><td>7.92 km/h</td>
+                </tr><tr><td>2024-07-01</td><td>106 km</td><td>9.16 km/h</td>
+                </tr><tr><td>2024-07-02</td><td>102 km</td><td>8.77 km/h</td>
+                </tr><tr><td>2024-07-03</td><td>113 km</td><td>9.35 km/h</td>
+                </tr><tr><td>2024-07-04</td><td>131 km</td><td>13.04 km/h</td>
+                </tr><tr><td>2024-07-05</td><td>51 km</td><td>12.64 km/h</td>
+                </tr><tr><td>2024-07-06</td><td>105 km</td><td>12.25 km/h</td>
+                </tr><tr><td>2024-07-07</td><td>130 km</td><td>12.56 km/h</td>
+                </tr><tr><td>2024-07-08</td><td>111 km</td><td>9.9 km/h</td>
+                </tr><tr><td>2024-07-09</td><td>111 km</td><td>10.85 km/h</td>
+                </tr><tr><td>2024-07-10</td><td>135 km</td><td>10.68 km/h</td>
+                </tr><tr><td>2024-07-11</td><td>112 km</td><td>10.36 km/h</td>
+                </tr><tr><td>2024-07-12</td><td>101 km</td><td>11.31 km/h</td>
+                </tr><tr><td>2024-07-13</td><td>104 km</td><td>9.99 km/h</td>
+                </tr><tr><td>2024-07-14</td><td>73 km</td><td>18.49 km/h</td>
+                </tr><tr><td>2024-07-15</td><td>55 km</td><td>14.14 km/h</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
